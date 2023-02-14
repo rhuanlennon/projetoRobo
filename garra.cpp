@@ -194,6 +194,7 @@ void drawScene(void) {
 	else
 		gluLookAt(eyeX, eyeY, eyeZ, 0.0, 0.0, 0.0, 0.0, 0.0, -1.0);
 
+	// ============================================= RIGHTARM=====================================================//
 	// drawing color
 	glColor3f(1.0f, 1.0f, 1.0f);
 
@@ -265,10 +266,90 @@ void drawScene(void) {
 	glTranslatef(0.0f, 0.0f, diameterSphere / 15);
 	glRotatef(60, 0.0f, 1.0f, 0.0f);
 	drawCone(diameterCylinder / 3, sizeClampPart);
+	// ============================================= RIGHTARM=====================================================//
+
+	// =============================================LEFTARM=====================================================//
+	// drawing color
+	glColor3f(1.0f, 1.0f, 1.0f);
+
+	// draws the base
+	drawCylinder(diameterBase, heightBase);
+	glTranslatef(0.0f, 0.0f, heightBase);
+	drawDisk(diameterCylinder, diameterBase);
+
+	// move to arm referential
+	glRotatef(angleArm, 0.0f, 0.0f, 1.0f);
+
+	//draws the arm
+	drawCylinder(diameterCylinder, sizeArm);
+
+	// move to forearm referential
+	glTranslatef(0.0f, 0.0f, sizeArm + diameterSphere / 5);
+	glRotatef(angleForearm, 0.0f, 1.0f, 0.0f);
+
+	//draws the forearm
+	drawSphere(diameterSphere);
+	glTranslatef(0.0f, 0.0f, diameterSphere / 5);
+	drawCylinder(diameterCylinder, sizeForearm);
+
+	//move to clamp referential
+	glTranslatef(0.0f, 0.0f, sizeForearm + diameterSphere / 5);
+	glRotatef(angleClampZ, 0.0f, 0.0f, 1.0f);
+
+	//draws the clamp sphere
+	drawSphere(diameterSphere);
+	glTranslatef(0.0f, 0.0f, diameterSphere / 2);
+
+	glPushMatrix();
+
+	//draws top part of clamp
+	glRotatef(angleClampY + 60, 0.0f, 1.0f, 0.0f);
+
+	drawCylinder(diameterCylinder / 3, sizeClampPart);
+	glTranslatef(0.0f, 0.0f, sizeClampPart + diameterSphere / 15);
+	drawSphere(diameterSphere / 3);
+
+	glTranslatef(0.0f, 0.0f, diameterSphere / 15);
+	glRotatef(-60, 0.0f, 1.0f, 0.0f);
+
+	drawCylinder(diameterCylinder / 3, sizeClampPart);
+	glTranslatef(0.0f, 0.0f, sizeClampPart + diameterSphere / 15);
+	drawSphere(diameterSphere / 3);
+
+	glTranslatef(0.0f, 0.0f, diameterSphere / 15);
+	glRotatef(-60, 0.0f, 1.0f, 0.0f);
+	drawCone(diameterCylinder / 3, sizeClampPart);
+
+	glPopMatrix();
+	glPushMatrix();
+
+	//draws bottom part of clamp
+	glRotatef(-angleClampY - 60, 0.0f, 1.0f, 0.0f);
+
+	drawCylinder(diameterCylinder / 3, sizeClampPart);
+	glTranslatef(0.0f, 0.0f, sizeClampPart + diameterSphere / 15);
+	drawSphere(diameterSphere / 3);
+
+	glTranslatef(0.0f, 0.0f, diameterSphere / 15);
+	glRotatef(60, 0.0f, 1.0f, 0.0f);
+
+	drawCylinder(diameterCylinder / 3, sizeClampPart);
+	glTranslatef(0.0f, 0.0f, sizeClampPart + diameterSphere / 15);
+	drawSphere(diameterSphere / 3);
+
+	glTranslatef(0.0f, 0.0f, diameterSphere / 15);
+	glRotatef(60, 0.0f, 1.0f, 0.0f);
+	drawCone(diameterCylinder / 3, sizeClampPart);
+	// =============================================LEFTARM=====================================================//
+
 
 	glPopMatrix();
 
 	glutSwapBuffers();
+}
+
+void drawRightArm(void) {
+
 }
 
 int main(int argc, char** argv) {
@@ -281,7 +362,6 @@ int main(int argc, char** argv) {
 	glutDisplayFunc(drawScene);
 	glutKeyboardFunc(handleKeypress);
 	glutReshapeFunc(handleResize);
-
 	glutMainLoop();
 	return 0;
 }
