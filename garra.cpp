@@ -269,6 +269,12 @@ void drawScene(void) {
 	// ============================================= RIGHTARM=====================================================//
 
 	// =============================================LEFTARM=====================================================//
+
+    //Continuar mexendo no referencial para desenhar o segundo braço
+    // move to base referential
+	glTranslatef(12.0f, 0.0f, 0.0f);
+	glRotatef(220.0, 10.0f, 20.0f, 0.0f);
+
 	// drawing color
 	glColor3f(1.0f, 1.0f, 1.0f);
 
@@ -346,10 +352,6 @@ void drawScene(void) {
 	glPopMatrix();
 
 	glutSwapBuffers();
-}
-
-void drawRightArm(void) {
-
 }
 
 int main(int argc, char** argv) {
