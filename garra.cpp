@@ -353,6 +353,7 @@ void drawScene(void) {
     // Desenha os olhos
     glPushMatrix();  // salva a matriz atual na pilha
     glTranslatef(0.4f, 0.5f, 0.8f);  // translada para a posição do olho direito
+    glColor3f(0.0f, 0.0f, 1.0f); // define a cor azul
     glEnable(GL_TEXTURE_2D);  // habilita o mapeamento de textura
     glBindTexture(GL_TEXTURE_2D, _textureIdCylinder);  // associa a textura ao objeto
     glutSolidSphere(0.1f, 8, 8);  // desenha o olho direito com textura
@@ -360,6 +361,7 @@ void drawScene(void) {
     glTranslatef(-0.8f, 0.0f, 0.0f);  // translada para a posição do olho esquerdo
     glEnable(GL_TEXTURE_2D);  // habilita o mapeamento de textura
     glBindTexture(GL_TEXTURE_2D, _textureIdCylinder);  // associa a textura ao objeto
+    glColor3f(0.0f, 0.0f, 1.0f); // define a cor azul
     glutSolidSphere(0.1f, 8, 8);  // desenha o olho esquerdo com textura
     glDisable(GL_TEXTURE_2D);  // desabilita o mapeamento de textura
     glPopMatrix();  // restaura a matriz anterior da pilha
