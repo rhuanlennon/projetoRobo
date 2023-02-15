@@ -268,8 +268,8 @@ void drawScene(void) {
 
     //Continuar mexendo no referencial para desenhar o segundo braço
 	// move to arm referential
-    glTranslatef(5.0f, 0.0f, 4.0f);
-	glRotatef(220.0, 1.0f, 1.0f, 0.0f);
+    glTranslatef(8.0f, 0.0f, 4.0f);
+	glRotatef(120.0, 1.0f, 1.0f, 5.0f);
 
 	// drawing color
 	glColor3f(1.0f, 1.0f, 1.0f);
@@ -338,7 +338,6 @@ void drawScene(void) {
 	glRotatef(60, 0.0f, 1.0f, 0.0f);
 	drawCone(diameterCylinder / 3, sizeClampPart);
 	// =============================================LEFTARM=====================================================//
-
 
 	glPopMatrix();
 
