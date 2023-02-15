@@ -268,7 +268,7 @@ void drawScene(void) {
     //Continuar mexendo no referencial para desenhar o segundo braço
     // move to base referential
 	glTranslatef(12.0f, -2.0f, 0.0f);
-	glRotatef(220.0, 10.0f, 7.0f, 0.0f);
+	glRotatef(120.0, 4.0f, 4.0f, 20.0f);
 
 	// drawing color
 	glColor3f(1.0f, 1.0f, 1.0f);
