@@ -340,7 +340,6 @@ void drawScene(void) {
 	// =============================================LEFTARM=====================================================//
 
     // =============================================Head========================================================//
-    glPushMatrix();  // salva a matriz atual na pilha
     glTranslatef(7.0f, 7.0f, 3.5f);  // translada para a posição desejada
     glScalef(1.0f, 1.5f, 1.0f);  // escala o objeto para uma forma mais apropriada
     glutWireSphere(1.0f, 10, 10);  // desenha a esfera da cabeça
