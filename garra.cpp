@@ -339,6 +339,31 @@ void drawScene(void) {
 	drawCone(diameterCylinder / 3, sizeClampPart);
 	// =============================================LEFTARM=====================================================//
 
+    // =============================================Head========================================================//
+    glPushMatrix();  // salva a matriz atual na pilha
+    glTranslatef(0.0f, 1.0f, 0.0f);  // translada para a posição desejada
+    glScalef(1.0f, 1.5f, 1.0f);  // escala o objeto para uma forma mais apropriada
+    glutWireSphere(1.0f, 10, 10);  // desenha a esfera da cabeça
+
+    // Desenha os olhos
+    glPushMatrix();  // salva a matriz atual na pilha
+    glTranslatef(0.4f, 0.5f, 0.8f);  // translada para a posição do olho direito
+    glutWireSphere(0.1f, 8, 8);  // desenha o olho direito
+    glTranslatef(-0.8f, 0.0f, 0.0f);  // translada para a posição do olho esquerdo
+    glutWireSphere(0.1f, 8, 8);  // desenha o olho esquerdo
+    glPopMatrix();  // restaura a matriz anterior da pilha
+
+    // Desenha a boca
+    glPushMatrix();  // salva a matriz atual na pilha
+    glTranslatef(0.0f, 0.2f, 1.0f);  // translada para a posição da boca
+    glRotatef(90.0f, 1.0f, 0.0f, 0.0f);  // rotaciona para que o cilindro fique na posição correta
+    gluCylinder(gluNewQuadric(), 0.2f, 0.2f, 0.4f, 8, 8);  // desenha o cilindro da boca
+    glPopMatrix();  // restaura a matriz anterior da pilha
+
+    glPopMatrix();  // restaura a matriz anterior da pilha
+
+
+
 	glPopMatrix();
 
 	glutSwapBuffers();
