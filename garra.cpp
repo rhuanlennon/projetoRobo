@@ -199,6 +199,7 @@ void drawScene(void) {
 	glColor3f(1.0f, 1.0f, 1.0f);
 
 	// move to arm referential
+    glTranslatef(5.0f, 0.0f, 0.0f);
 	glRotatef(240.0, 20.0f, 20.0f, 20.0f);
 
 	//draws the arm
@@ -266,9 +267,9 @@ void drawScene(void) {
 	// =============================================LEFTARM=====================================================//
 
     //Continuar mexendo no referencial para desenhar o segundo braço
-    // move to base referential
-	glTranslatef(12.0f, -2.0f, 0.0f);
-	glRotatef(120.0, 4.0f, 4.0f, 20.0f);
+	// move to arm referential
+    glTranslatef(5.0f, 0.0f, 4.0f);
+	glRotatef(220.0, 1.0f, 1.0f, 0.0f);
 
 	// drawing color
 	glColor3f(1.0f, 1.0f, 1.0f);
