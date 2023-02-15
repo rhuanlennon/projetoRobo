@@ -198,13 +198,8 @@ void drawScene(void) {
 	// drawing color
 	glColor3f(1.0f, 1.0f, 1.0f);
 
-	// draws the base
-	drawCylinder(diameterBase, heightBase);
-	glTranslatef(0.0f, 0.0f, heightBase);
-	drawDisk(diameterCylinder, diameterBase);
-
 	// move to arm referential
-	glRotatef(angleArm, 0.0f, 0.0f, 1.0f);
+	glRotatef(190, 15.0f, 18.0f, 20.0f);
 
 	//draws the arm
 	drawCylinder(diameterCylinder, sizeArm);
@@ -277,11 +272,6 @@ void drawScene(void) {
 
 	// drawing color
 	glColor3f(1.0f, 1.0f, 1.0f);
-
-	// draws the base
-	drawCylinder(diameterBase, heightBase);
-	glTranslatef(0.0f, 0.0f, heightBase);
-	drawDisk(diameterCylinder, diameterBase);
 
 	// move to arm referential
 	glRotatef(angleArm, 0.0f, 0.0f, 1.0f);
