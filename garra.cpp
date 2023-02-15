@@ -199,7 +199,7 @@ void drawScene(void) {
 	glColor3f(1.0f, 1.0f, 1.0f);
 
 	// move to arm referential
-	glRotatef(190, 15.0f, 18.0f, 20.0f);
+	glRotatef(240.0, 20.0f, 20.0f, 20.0f);
 
 	//draws the arm
 	drawCylinder(diameterCylinder, sizeArm);
