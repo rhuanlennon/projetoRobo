@@ -337,19 +337,31 @@ void drawScene(void) {
 	glTranslatef(0.0f, 0.0f, diameterSphere / 15);
 	glRotatef(60, 0.0f, 1.0f, 0.0f);
 	drawCone(diameterCylinder / 3, sizeClampPart);
+    glPopMatrix();  // restaura a matriz anterior da pilha
 	// =============================================LEFTARM=====================================================//
 
     // =============================================Head========================================================//
+
     glTranslatef(7.0f, 7.0f, 3.5f);  // translada para a posição desejada
     glScalef(1.0f, 1.5f, 1.0f);  // escala o objeto para uma forma mais apropriada
-    glutWireSphere(1.0f, 10, 10);  // desenha a esfera da cabeça
+    glEnable(GL_TEXTURE_2D);  // habilita o mapeamento de textura
+    glBindTexture(GL_TEXTURE_2D, _textureIdCylinder);  // associa a textura ao objeto
+    glutSolidSphere(1.0f, 10, 10);  // desenha a esfera da cabeça com textura
+    glDisable(GL_TEXTURE_2D);  // desabilita o mapeamento de textura
+
 
     // Desenha os olhos
     glPushMatrix();  // salva a matriz atual na pilha
     glTranslatef(0.4f, 0.5f, 0.8f);  // translada para a posição do olho direito
-    glutWireSphere(0.1f, 8, 8);  // desenha o olho direito
+    glEnable(GL_TEXTURE_2D);  // habilita o mapeamento de textura
+    glBindTexture(GL_TEXTURE_2D, _textureIdCylinder);  // associa a textura ao objeto
+    glutSolidSphere(0.1f, 8, 8);  // desenha o olho direito com textura
+    glDisable(GL_TEXTURE_2D);  // desabilita o mapeamento de textura
     glTranslatef(-0.8f, 0.0f, 0.0f);  // translada para a posição do olho esquerdo
-    glutWireSphere(0.1f, 8, 8);  // desenha o olho esquerdo
+    glEnable(GL_TEXTURE_2D);  // habilita o mapeamento de textura
+    glBindTexture(GL_TEXTURE_2D, _textureIdCylinder);  // associa a textura ao objeto
+    glutSolidSphere(0.1f, 8, 8);  // desenha o olho esquerdo com textura
+    glDisable(GL_TEXTURE_2D);  // desabilita o mapeamento de textura
     glPopMatrix();  // restaura a matriz anterior da pilha
 
     // Desenha a boca
@@ -357,8 +369,6 @@ void drawScene(void) {
     glTranslatef(0.0f, 0.2f, 1.0f);  // translada para a posição da boca
     glRotatef(90.0f, 1.0f, 0.0f, 0.0f);  // rotaciona para que o cilindro fique na posição correta
     gluCylinder(gluNewQuadric(), 0.2f, 0.2f, 0.4f, 8, 8);  // desenha o cilindro da boca
-    glPopMatrix();  // restaura a matriz anterior da pilha
-
     glPopMatrix();  // restaura a matriz anterior da pilha
 
     // ============================================== Head===================================================//
