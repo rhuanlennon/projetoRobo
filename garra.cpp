@@ -343,6 +343,7 @@ void drawScene(void) {
     // =============================================Head========================================================//
 
     glTranslatef(5.5f, 0.0f, -3.0f);  // translada para a posição desejada
+    glRotatef(100, 20.0f, 1.0f, 0.0f);
     glScalef(1.0f, 1.5f, 1.0f);  // escala o objeto para uma forma mais apropriada
     glEnable(GL_TEXTURE_2D);  // habilita o mapeamento de textura
     glBindTexture(GL_TEXTURE_2D, _textureIdCylinder);  // associa a textura ao objeto
