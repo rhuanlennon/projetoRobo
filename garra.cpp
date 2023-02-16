@@ -347,13 +347,13 @@ void drawScene(void) {
     glScalef(1.0f, 1.5f, 1.0f);  // escala o objeto para uma forma mais apropriada
     glEnable(GL_TEXTURE_2D);  // habilita o mapeamento de textura
     glBindTexture(GL_TEXTURE_2D, _textureIdCylinder);  // associa a textura ao objeto
-    glutSolidSphere(1.0f, 10, 10);  // desenha a esfera da cabeça com textura
+    glutSolidSphere(1.2f, 10, 10);  // desenha a esfera da cabeça com textura
     glDisable(GL_TEXTURE_2D);  // desabilita o mapeamento de textura
 
 
     // Desenha os olhos
     glPushMatrix();  // salva a matriz atual na pilha
-    glTranslatef(0.4f, 0.5f, 0.8f);  // translada para a posição do olho direito
+    glTranslatef(0.4f, 0.5f, 1.0f);  // translada para a posição do olho direito
     glColor3f(0.0f, 0.0f, 1.0f); // define a cor azul
     glEnable(GL_TEXTURE_2D);  // habilita o mapeamento de textura
     glBindTexture(GL_TEXTURE_2D, _textureIdCylinder);  // associa a textura ao objeto
@@ -369,7 +369,7 @@ void drawScene(void) {
 
     // Desenha a boca
     glPushMatrix();  // salva a matriz atual na pilha
-    glTranslatef(0.0f, 0.2f, 1.0f);  // translada para a posição da boca
+    glTranslatef(0.0f, 0.2f, 1.3f);  // translada para a posição da boca
     glRotatef(90.0f, 1.0f, 0.0f, 0.0f);  // rotaciona para que o cilindro fique na posição correta
     gluCylinder(gluNewQuadric(), 0.2f, 0.2f, 0.4f, 8, 8);  // desenha o cilindro da boca
     glPopMatrix();  // restaura a matriz anterior da pilha
